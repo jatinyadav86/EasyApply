@@ -15,7 +15,7 @@ const Options = () => {
       router.push('/')
       setTimeout(() => {
         scrollToSection(id)
-      }, 1000)
+      }, 3000)
     } else {
       scrollToSection(id)
     }
