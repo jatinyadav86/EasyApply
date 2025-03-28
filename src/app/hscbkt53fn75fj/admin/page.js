@@ -6,15 +6,9 @@ import SubServiceButton from '@/app/components/admin/SubServiceButton';
 import UpdateServiceButton from '@/app/components/admin/UpdateServiceButton';
 import { arrangeDocs } from '@/app/utils/serverFunc';
 import Image from 'next/image';
-import { redirect } from 'next/navigation';
-import { getCurrentUser } from '@/app/actions/getCurrrentUser';
 
 
 const page = async () => {
-    const currentUser = await getCurrentUser()
-    if(currentUser?.phone !== "8595558488" || !currentUser?.isVerified || currentUser?.name !== "Jatin Yadav") {
-        redirect("/")   
-    }
     const { subServices, eduForm, jobs, services } = await getAppData()
 
     const getSubServicesWithServiceId = (id) => {

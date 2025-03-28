@@ -4,14 +4,8 @@ import ServiceRequestModel from "@/app/model/ServiceRequestModel";
 import ServiceRequestCard from "@/app/components/cards/ServiceRequestCard";
 import { getAppData } from "@/app/actions/getAppData";
 import Link from "next/link";
-import { getCurrentUser } from "@/app/actions/getCurrrentUser";
-import { redirect } from "next/navigation";
 
 export default async function Home() {
-    const currentUser = await getCurrentUser()
-    if (currentUser?.phone !== "8595558488" || !currentUser?.isVerified || currentUser?.name !== "Jatin Yadav") {
-        redirect("/")
-    }
     const data = await getAppData()
 
     await dbConnect();
