@@ -36,7 +36,7 @@ const ChangeStatus = ({ status, userId, serviceRequestId }) => {
             <select name="status" id="status" onChange={(e) => setChangedStatus(e.target.value)} className="border border-solid border-[#dddddd] rounded-md px-1">
                 <option value=""></option>
                 <option value="accepted">accepted</option>
-                <option value="fullfiled">fullfiled</option>
+                <option value="fulfilled">fullfiled</option>
                 <option value="canceled">canceled</option>
             </select>
             <button onClick={changeStatus} disabled={loading} className={`text-sm text-[#222222] ${!changedStatus && "hidden"} font-semibold underline cursor-pointer hover:scale-105 disabled:opacity-75 disabled:cursor-not-allowed`}>Change</button>
